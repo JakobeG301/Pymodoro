@@ -39,7 +39,9 @@ def countDown():
         root.after(1000,countDown)
 
 
-
+def changeTime(seconds):
+    global remTime
+    remTime = seconds
 
 def changeState():
     global countTime
@@ -80,7 +82,13 @@ timerBanner = tk.Label(root, text = timerValue, font=("Helvetica",60))
 timerBanner.place(x = 100, y=210, width=200, height=80)
 
 button1 = Button(root, text = "Start", command=lambda:changeState())
-button1.place(x=175, y=350, width=50,height=40)
+button1.place(x=175, y=400, width=50,height=40)
+button2 = Button(root, text = "10", command=lambda:changeTime(600))
+button2.place(x=185, y=350, width=30,height=30)
+button3 = Button(root, text = "5", command=lambda:changeTime(300))
+button3.place(x=145, y=350, width=30,height=30)
+button4 = Button(root, text = "25", command=lambda:changeTime(1500))
+button4.place(x=225, y=350, width=30,height=30)
 # button2 = Button(root, text = "Stop")
 # button3 = Button(root, text = "Cancel")
 # button4 = Button(root, text = "Leave", command = root.destroy)
